@@ -1,0 +1,29 @@
+{
+  "name": "rize-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server for Rize.io time tracking API",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "rize-mcp": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "test": "node --test",
+    "templates:upload": "node scripts/upload-templates.js",
+    "templates:dry-run": "node scripts/upload-templates.js --dry-run"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
