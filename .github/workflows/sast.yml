@@ -31,22 +31,14 @@ jobs:
             --metrics off --no-error \
             --json --output semgrep-report.json \
             src
-          python3 - <<'EOF' >> "$GITHUB_STEP_SUMMARY"
-          import json
-          from collections import Counter
-          results = json.load(open('semgrep-report.json'))['results']
-          by_sev = Counter(r['extra']['severity'] for r in results)
-          print('## Semgrep findings (report-only)')
-          print(f"Total: {len(results)}")
-          for sev, n in by_sev.most_common():
-              print(f"- {sev}: {n}")
-          EOF
+          python3 .github/scripts/semgrep-summary.py semgrep-report.json >> "$GITHUB_STEP_SUMMARY"
 
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         if: always()
         with:
           name: semgrep-report
           path: semgrep-report.json
+          if-no-files-found: error
           retention-days: 90
 
   sast:
