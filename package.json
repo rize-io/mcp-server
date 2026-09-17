@@ -14,6 +14,12 @@
   "bin": {
     "rize-mcp": "./dist/index.js"
   },
+  "files": [
+    "dist",
+    "skills",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",

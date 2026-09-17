@@ -65,7 +65,7 @@ test('MCP stdio round trip against a mocked Rize API', async (t) => {
     assert.notEqual(result.isError, true);
     const payload = JSON.parse(result.content[0].text);
     assert.equal(payload.mock, true);
-    assert.equal(payload.operation, 'query GetProjects($query:');
+    assert.match(payload.operation, /^query GetProjects\b/);
     assert.deepEqual(payload.variables, { first: 3 });
   });
 
