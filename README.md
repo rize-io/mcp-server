@@ -42,8 +42,10 @@ Sign up at [rize.io](https://rize.io) and generate an API key from **Settings > 
 
 #### 2. Install
 
+The package is not yet published to npm. Install from GitHub (this builds `dist/` on install):
+
 ```bash
-npm install -g rize-mcp-server
+npm install -g github:rize-io/mcp-server
 ```
 
 Or clone and build from source:
@@ -64,7 +66,7 @@ npm run build
   "mcpServers": {
     "rize": {
       "command": "npx",
-      "args": ["-y", "rize-mcp-server"],
+      "args": ["-y", "github:rize-io/mcp-server"],
       "env": {
         "RIZE_API_KEY": "your-api-key"
       }
@@ -80,7 +82,7 @@ npm run build
   "mcpServers": {
     "rize": {
       "command": "npx",
-      "args": ["-y", "rize-mcp-server"],
+      "args": ["-y", "github:rize-io/mcp-server"],
       "env": {
         "RIZE_API_KEY": "your-api-key"
       }
@@ -95,7 +97,7 @@ npm run build
 {
   "rize": {
     "command": "npx",
-    "args": ["-y", "rize-mcp-server"],
+    "args": ["-y", "github:rize-io/mcp-server"],
     "env": {
       "RIZE_API_KEY": "your-api-key"
     }
